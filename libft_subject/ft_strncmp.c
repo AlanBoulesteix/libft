@@ -6,13 +6,15 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 23:36:01 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/27 23:36:02 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/10/28 01:39:06 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(const char *s1, const char *s2, int n)
+#include "libft.h"
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (s1[i] && i < n - 1)

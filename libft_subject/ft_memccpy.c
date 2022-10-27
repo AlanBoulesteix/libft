@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 23:28:42 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/28 00:35:20 by aboulest         ###   ########.fr       */
+/*   Created: 2022/10/28 01:05:45 by aboulest          #+#    #+#             */
+/*   Updated: 2022/10/28 01:37:30 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(const char *str)
+#include "libft.h"
+
+void    *memccpy(void *dst, const void *src, int c, size_t n)
 {
-    int i;
-    int res;
-    int sign;
+    size_t    i;
 
     i = 0;
-    res = 0;
-    sign = 1;
-    while (str[i] == ' ')
-        i++;
-    if (str[i] == '+' || str[i] == '-')
+    while (i < n && ((unsigned char*)src)[i] != c)
     {
-        if (str[i] == '-')
-            sign *= -1;
+        ((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
         i++;
     }
-    while (str[i] >= '0' && str[i] <= '9')
-    {
-        res = res * 10 + str[i] - '0';
-        i++;
-    }
-    return(sign * res);
+    return(dst);
 }

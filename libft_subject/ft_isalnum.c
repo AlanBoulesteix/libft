@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 23:29:04 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/27 23:29:09 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/10/28 00:10:37 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int ft_isalnum(int c)
 {
-    return (if (ft_isalpha(c) || ft_isdigit(c))
+    return (ft_isalpha(c) || ft_isdigit(c));
 }

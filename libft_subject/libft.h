@@ -16,6 +16,8 @@ int     ft_toupper(int c);
 int     ft_tolower(int c);
 int     ft_strlen(const char *str);
 
+int ft_strncmp(const char *s1, const char *s2, int n)
+
 void    ft_bzero(char *str, int n);
 
 char    *ft_strdup(const char *s);

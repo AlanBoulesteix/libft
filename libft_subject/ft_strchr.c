@@ -1,13 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/27 23:34:56 by aboulest          #+#    #+#             */
+/*   Updated: 2022/10/27 23:34:58 by aboulest         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 char    *ft_strchr(const char *s, int c)
 {
-    int i;
+    int     i;
+    char    *ptr;
 
     i = 0;
-    while(s[i])
+    ptr = (char*)s;
+    while(ptr[i])
     {
-        if (c == s[i])
-            return (s[i]);
+        if (c == ptr[i])
+            return (&ptr[i]);
         i++;
     }
-    return (0);
+    return (&ptr[i]);
 }

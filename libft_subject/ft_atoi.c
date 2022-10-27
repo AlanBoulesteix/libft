@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 23:29:18 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/27 23:29:21 by aboulest         ###   ########.fr       */
+/*   Created: 2022/10/27 23:28:42 by aboulest          #+#    #+#             */
+/*   Updated: 2022/10/27 23:28:48 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int ft_atoi(const char *str)
 {
-        return (if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
+    int i;
+    int res;
+    int sign;
+
+    i = 0;
+    res = 0;
+    sign = 1;
+    while (str[i] == ' ')
+        i++;
+    while (str[i] == '+' || str[i] == '-')
+    {
+        if (str[i] == '-')
+            sign *= -1;
+        i++;
+    }
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        res = res * 10 + str[i] - '0';
+        i++;
+    }
+    return(sign * res);
 }

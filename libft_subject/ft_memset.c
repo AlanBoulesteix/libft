@@ -1,16 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 23:29:18 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/27 23:29:21 by aboulest         ###   ########.fr       */
+/*   Created: 2022/10/27 23:30:36 by aboulest          #+#    #+#             */
+/*   Updated: 2022/10/27 23:30:39 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+void    *ft_memset(void *b, int c, int len)
 {
-        return (if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
+    int i;
+    
+    i = 0;
+    while (i < len)
+    {
+       ((unsigned char*)b)[i] = c;
+        i++;
+    }
+    return (b);
 }

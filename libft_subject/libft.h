@@ -1,13 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-
 #include <stddef.h>
+#include <stdlib.h>
 
 void    *ft_memset(void *b, int c, int len);
 void    ft_bzero(char *str, int n);
@@ -32,12 +27,7 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_atoi(const char *str);
 
-//calloc
+void    *ft_calloc(size_t count, size_t size);
 char    *ft_strdup(const char *s);
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
-/*VERIFIE SI TOUTES LES FONCTIONS SONT BIEN DANS TON .H BG */
 
 #endif

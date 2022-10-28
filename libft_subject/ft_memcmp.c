@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 01:05:45 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/28 13:44:02 by aboulest         ###   ########.fr       */
+/*   Created: 2022/10/28 13:45:02 by aboulest          #+#    #+#             */
+/*   Updated: 2022/10/28 13:45:04 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void    *ft_memccpy(void *dst, const void *src, int c, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t    i;
-
-    i = 0;
-    while (i < n && ((unsigned char*)src)[i] != c)
+    size_t i;
+    while (i < n)
     {
-        ((unsigned char*)dst)[i] = ((unsigned char*)src)[i];
+        if (((const char*)s1)[i] != ((const char*)s2)[i])
+            return (((const char*)s1)[i] - ((const char*)s1)[i]);
         i++;
     }
-    return(dst);
+    return (0);
 }

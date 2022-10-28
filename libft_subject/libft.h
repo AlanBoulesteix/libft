@@ -13,9 +13,9 @@ void    *ft_memset(void *b, int c, int len);
 void    ft_bzero(char *str, int n);
 void    *memcpy(void *dst, const void *src, size_t n);
 void    *memccpy(void *dst, const void *src, int c, size_t n);
-//memmove
-//memchr
-//memcmp
+void    *memmove(void *dst, const void *src, size_t len);
+void    *memchr(const void *s, int c, size_t n);
+int memcmp(const void *s1, const void *s2, size_t n);
 int     ft_strlen(const char *str);
 int     ft_isalpha(int c);
 int     ft_isdigit(int c);

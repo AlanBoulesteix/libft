@@ -6,13 +6,13 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:35 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/28 01:36:34 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/10/28 13:43:43 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *memcpy(void *dst, const void *src, size_t n)
+void    *ft_memcpy(void *dst, const void *src, size_t n)
 {
     size_t    i;
 

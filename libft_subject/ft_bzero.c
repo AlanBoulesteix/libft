@@ -6,11 +6,11 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:42 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/28 00:52:44 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/10/29 13:07:21 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    bzero(void *s, unsigned int n)
+void    ft_bzero(void *s, unsigned int n)
 {
     unsigned int i;
 

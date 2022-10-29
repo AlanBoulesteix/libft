@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 23:34:56 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/29 13:13:17 by aboulest         ###   ########.fr       */
+/*   Created: 2022/10/29 12:16:50 by aboulest          #+#    #+#             */
+/*   Updated: 2022/10/29 13:20:02 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char    *ft_strtrim(char const *s1, char const *set)
 {
     int     i;
-    char    *ptr;
+    int     j;
+    char    *str;
 
+    str = malloc (sizeof(char) * ft_strlen(s1));
+    if (!str)
+        return (NULL);
     i = 0;
-    ptr = (char*)s;
-    while(ptr[i])
+    j = 0;
+    while (s1[i])
     {
-        if (c == ptr[i])
-            return (&ptr[i]);
+        while (s1[i] && ft_strchr(set, s1[i]))
+            i++;
+        str[j] = s1[i];
+        j++;
         i++;
     }
-    return (NULL);
+    str[j] = '\0';
+    return (str);
 }

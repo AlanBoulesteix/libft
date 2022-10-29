@@ -1,8 +1,13 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+
 #include <stddef.h>
 #include <stdlib.h>
+
+/*PARTIE I*/
+/*PARTIE I*/
+/*PARTIE I*/
 
 void    *ft_memset(void *b, int c, int len);
 void    ft_bzero(char *str, int n);
@@ -29,5 +34,26 @@ int ft_atoi(const char *str);
 
 void    *ft_calloc(size_t count, size_t size);
 char    *ft_strdup(const char *s);
+
+/*PARTIE I*/
+/*PARTIE I*/
+/*PARTIE I*/
+
+/*PARTIE II*/
+/*PARTIE II*/
+/*PARTIE II*/
+
+char    *ft_strtrim(char const *s1, char const *set);
+char    **ft_split(char const *s, char c);
+//ft_itoa
+//ft_strmapi
+//ft_putchar_fd
+//ft_putstr_fd
+//ft_putendl_fd
+//ft_putnbr_fd
+
+/*PARTIE II*/
+/*PARTIE II*/
+/*PARTIE II*/
 
 #endif

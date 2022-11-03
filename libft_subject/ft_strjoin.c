@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 12:20:27 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/31 00:08:49 by aboulest         ###   ########.fr       */
+/*   Created: 2022/11/02 17:39:41 by aboulest          #+#    #+#             */
+/*   Updated: 2022/11/02 17:54:54 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+char    *ft_strjoin(char const *s1, char const *s2)
 {
     size_t  i;
+    size_t  j;
+    char    *join;
+    
+    join = malloc (sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+    if (!join)
+        return (NULL);
     i = 0;
-    while (i < len)
+    while (s1[i])
     {
-        ((char*)dst)[i] = ((const char*)src)[i];
+        join[j] = s1[i];
+        j++;
         i++;
     }
-    return (dst);
+    i = 0;
+    while (s2[i])
+    {
+        join[j] = s2[i];
+        j++;
+        i++;
+    }
+    join[j] = 0;
+    return (join);
 }

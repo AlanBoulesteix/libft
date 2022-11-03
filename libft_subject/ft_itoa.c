@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 12:20:27 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/31 00:08:49 by aboulest         ###   ########.fr       */
+/*   Created: 2022/11/03 14:52:59 by aboulest          #+#    #+#             */
+/*   Updated: 2022/11/03 15:03:09 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void    *ft_memmove(void *dst, const void *src, size_t len)
+char    *ft_itoa(int n)
 {
-    size_t  i;
+    char    *str;
+    int     i;
+    int     nbchiffre;
+
+    str = malloc(sizeof(char) * 100000);
+    if (!str)
+        return (NULL);
     i = 0;
-    while (i < len)
+    nbchiffre = 3;
+    while (i < nbchiffre)
     {
-        ((char*)dst)[i] = ((const char*)src)[i];
+        if
         i++;
     }
-    return (dst);
 }

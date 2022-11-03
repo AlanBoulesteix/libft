@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:05:01 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/29 18:31:28 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/01 21:11:03 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
     size_t j;
 
     i = 0;
-    if (!needle)
-       return ((char *)haystack);
+    if (!*needle)
+        return ((char *)haystack);
     while (haystack[i] && i < len)
     {
         j = 0;
@@ -29,5 +29,5 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
             return((char*)haystack + i);
         i++;
     }
-    return(NULL);
+    return(0);
 }

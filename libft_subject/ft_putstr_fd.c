@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/28 12:20:27 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/31 00:08:49 by aboulest         ###   ########.fr       */
+/*   Created: 2022/11/02 18:23:07 by aboulest          #+#    #+#             */
+/*   Updated: 2022/11/02 18:27:04 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dst, const void *src, size_t len)
+void    ft_putstr_fd(char *s, int fd)
 {
-    size_t  i;
-    i = 0;
-    while (i < len)
+    int i;
+
+    while (s[i])
     {
-        ((char*)dst)[i] = ((const char*)src)[i];
+        ft_putchar_fd(s[i], fd);
         i++;
     }
-    return (dst);
 }

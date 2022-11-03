@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 23:34:56 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/29 13:13:17 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:41:27 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 char    *ft_strchr(const char *s, int c)
 {
     int     i;
-    char    *ptr;
+    int     len;
 
     i = 0;
-    ptr = (char*)s;
-    while(ptr[i])
+    len = ft_strlen(s);
+    while(i <= len)
     {
-        if (c == ptr[i])
-            return (&ptr[i]);
+        if (c == s[i])
+            return (&((char*)s)[i]);
         i++;
     }
     return (NULL);

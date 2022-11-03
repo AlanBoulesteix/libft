@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 13:45:02 by aboulest          #+#    #+#             */
-/*   Updated: 2022/10/28 13:45:04 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/01 23:26:56 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     size_t i;
-    while (i < n)
-    {
-        if (((const char*)s1)[i] != ((const char*)s2)[i])
-            return (((const char*)s1)[i] - ((const char*)s1)[i]);
+
+    i = 0;
+    while (((const char*)s1)[i] == ((const char*)s2)[i] && i < n)
         i++;
-    }
-    return (0);
+    return (((const char*)s1)[i] - ((const char*)s2)[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 19:33:39 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 12:39:57 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:31:25 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,16 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*cal;
+	size_t	i;
 
+	i = 0;
 	cal = malloc(count * size);
 	if (!cal)
-		return (cal);
-	ft_bzero(cal, count * size);
+		return (NULL);
+	while (i < count)
+	{
+		((char *)cal)[i] = 0;
+		i++;
+	}
 	return (cal);
 }

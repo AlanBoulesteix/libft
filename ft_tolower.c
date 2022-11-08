@@ -6,13 +6,15 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 23:36:32 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 12:27:26 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:01:25 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
 		c = c + 32;
 	return (c);
 }

@@ -6,13 +6,15 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 00:52:42 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 12:11:08 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:57:41 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)

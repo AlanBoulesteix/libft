@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:39:41 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 12:45:31 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:47:56 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!join)
 		return (NULL);
 	i = 0;
+	j = 0;
 	while (s1[i])
 	{
 		join[j] = s1[i];

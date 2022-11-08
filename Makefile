@@ -6,7 +6,7 @@
 #    By: aboulest <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:06:08 by aboulest          #+#    #+#              #
-#    Updated: 2022/11/08 10:44:21 by aboulest         ###   ########.fr        #
+#    Updated: 2022/11/08 14:41:18 by aboulest         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ MY_SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 
 MY_OBJECTS = $(MY_SRC:.c=.o)
 
-CFLAGS += -Wall -Wextra -Werror -g
+CFLAGS += -Wall -Wextra -Werror 
 
 CUR_DIR = $(shell pwd)
 

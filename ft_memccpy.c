@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 01:05:45 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 14:30:25 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:53:03 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (i < n && ((unsigned char *)src)[i] != c)
+	while (i < n && ((unsigned char *)src)[i] != (char)c)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;

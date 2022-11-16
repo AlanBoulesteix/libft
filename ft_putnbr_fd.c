@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 23:01:23 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 14:27:03 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:25:26 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	ft_putnbr_fd(int n, int fd)
 		write (fd, "-2", 2);
 		n = 147483648;
 	}
+	if (n == 0)
+	{
+		ft_putchar_fd('0', fd);
+		return;
+	}	
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

@@ -6,7 +6,7 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 09:29:26 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 14:29:15 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:54:16 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*mapi;
 	int		i;
 
-	mapi = malloc(sizeof(*mapi) * ft_strlen(s));
+	mapi = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!mapi)
 		return (NULL);
 	i = 0;
@@ -29,20 +29,22 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (mapi);
 }
 /*
-   char    ft_fonction(unsigned  int nb, char c)
-   {
-   nb = 32;
-   return (c + nb);
-   }
+char    ft_fonction(unsigned  int nb, char c)
+{
+	return (c + nb);
+}
 
 #include <stdio.h>
 
 int main(void)
 {
-char    *word;
+	char    *word;
+	char	*str;
+	void	(*f)(unsigned int, char);
 
-word = "bonjour";
-
-printf ("%s\n", ft_strmapi(word, ft_fonction(unsigned int, char)));
-return (0);
+	f = ft_fonction;
+	word = "bonjour";
+	str = ft_strmapi(word, f);
+	
+	return (0);
 }*/

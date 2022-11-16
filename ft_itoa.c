@@ -6,51 +6,51 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:52:59 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/07 14:44:22 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:12:13 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	ft_nb_chiffre(int n)
 {
-	int		count;
-	long	long_n;
+	int	count;
 
-	long_n = n;
-	count = 0;
-	if (long_n < 0)
-		long_n = -long_n;
-	while (long_n != 0)
+	if (n == 0)
+		count = 1;
+	else
 	{
-		count++;
-		long_n = long_n / 10;
+		count = (n < 0);
+		while (n != 0)
+		{
+			count++;
+			n = n / 10;
+		}
 	}
 	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
 	int		nbchiffre;
+	int		stop;
+	char	*str;
 	long	long_n;
 
-	long_n = n;
 	nbchiffre = ft_nb_chiffre(n);
-	if (long_n < 0)
-		long_n = -long_n;
-	str = malloc(sizeof(char) * nbchiffre);
+	str = malloc(sizeof(char) * (nbchiffre) + 1);
 	if (!str)
 		return (NULL);
+	stop = (n < 0);
 	str[nbchiffre] = 0;
-	nbchiffre--;
-	while (nbchiffre >= 0)
+	if (stop)
+		str[0] = '-';
+	long_n = (n > 0) * (long) n - (n < 0) * (long)n;
+	while (nbchiffre-- > stop)
 	{
-		str[nbchiffre] = (long_n % 10) + '0';
+		str[nbchiffre] = long_n % 10 + '0';
 		long_n = long_n / 10;
-		nbchiffre --;
 	}
-	if (n < 0)
-		str = ft_strjoin("-", str);
 	return (str);
 }

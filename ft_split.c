@@ -6,77 +6,87 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 13:27:49 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/16 16:17:07 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:11:28 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_chr(char c, char s)
+static int	ft_is_in(char s, char c)
 {
-	return (c == s);
+	return (s == c);
 }
 
-static int	ft_malloc_size(char const *s, char c)
+static int	ft_nb_word(char const *s, char c)
 {
 	int	nb;
-	int	i;
 
 	nb = 0;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		while (s[i] && ft_chr(c, s[i]))
-			i++;
-		if (s[i])
+		while (*s && ft_is_in(*s, c))
+			s++;
+		if (*s && !ft_is_in(*s, c))
+		{
 			nb++;
-		while (s[i] && !ft_chr(c, s[i]))
-			i++;
+			while (*s && !ft_is_in(*s, c))
+				s++;
+		}
 	}
 	return (nb);
 }
 
-static char	*ft_strdup_spe(const char *str, char c)
+static char	*ft_strdup_char(char const *s, char c)
 {
 	char	*dup;
 	int		i;
-	int		n;
+	int		nb;
 
-	n = 0;
-	while (str[n] && !ft_chr(c, str[n]))
-		n++;
-	dup = malloc(sizeof(char) * (n + 1));
+	nb = 0;
 	i = 0;
-	while (str[i] && i < n)
+	while (s[nb] && !ft_is_in(s[nb], c))
+		nb++;
+	dup = malloc (sizeof(char) * (nb + 1));
+	if (!dup)
+		return (NULL);
+	while (i < nb)
 	{
-		dup[i] = str[i];
+		dup[i] = s[i];
 		i++;
 	}
 	dup[i] = 0;
 	return (dup);
 }
 
-char	**ft_split(const char *s, char c)
+static void	ft_free(char **split, int index)
 {
-	char	**split;
-	int		i;
-	int		j;
+	while (index >= 0)
+		free(split[index--]);
+	free(split);
+}
 
-	split = malloc (sizeof(char *) * (ft_malloc_size (s, c) + 1));
+char	**ft_split(char const *s, char c)
+{
+	char		**split;
+	int			j;
+	int const	nb_word = ft_nb_word(s, c);
+
+	j = -1;
+	split = malloc (sizeof(char *) * (nb_word + 1));
 	if (!split)
-		return (0);
-	i = 0;
-	j = 0;
-	while (s[i])
+		return (NULL);
+	while (++j < nb_word)
 	{
-		while (s[i] && ft_chr(c, s[i]))
-			i++;
-		if (s[i] && !ft_chr(c, s[i]))
-			split[j] = ft_strdup_spe(s + i, c);
-		while (s[i] && !ft_chr(c, s[i]))
-			i++;
-		if (s[i])
-			j++;
+		while (*s && ft_is_in(*s, c))
+			s++;
+		split[j] = ft_strdup_char(s, c);
+		if (!split[j])
+		{
+			ft_free(split, j);
+			return (NULL);
+		}
+		while (*s && !ft_is_in(*s, c))
+			s++;
 	}
 	split[j] = 0;
 	return (split);
@@ -84,16 +94,22 @@ char	**ft_split(const char *s, char c)
 /*
 int    main(void)
 {
-    char s[] = "tripouille";
-    char c = ' ';
-    char **split = ft_split(s, 0);
-    int    i = 0;
+    char            **split;
+    unsigned int    i;
+
+    i = 0;
+    split = ft_split("Salut comment tu va ?", ' ');
+    if (!split)
+    {
+        free(split);
+        printf("NULL");
+        return (0);
+    }
     while (split[i])
     {
-        printf("%s\n", split[i]);
+        printf("split[%d] = %s\n", i, split[i]);
         free(split[i]);
-		i++;
+        i ++;
     }
-	free(split);
-    return (0);
-}*/
+    free(split);
+*/

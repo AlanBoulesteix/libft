@@ -6,14 +6,14 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:52:59 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/12 15:12:13 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/18 19:31:57 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	ft_nb_chiffre(int n)
+static int	ft_nb_chiffre(int n)
 {
 	int	count;
 

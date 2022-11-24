@@ -6,18 +6,19 @@
 /*   By: aboulest <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 16:22:02 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/16 18:56:41 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:47:39 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void(*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*buffer;
-	if (!*lst || !del)
+
+	if (!lst || !del)
 		return ;
-	while ((*lst)->next)
+	while (*lst)
 	{
 		buffer = (*lst)->next;
 		ft_lstdelone(*lst, del);
@@ -44,6 +45,6 @@ int	main(void)
 	elem3->next = elem4;
 	printf ("%s\n", (char *)elem1->next->content);
 	ft_lstclear(&elem2, del);
-	printf("%s\n", (char *)elem1->content);
+	printf("%s\n", (char *)elem1->next->content);
 	return (0);
 }*/

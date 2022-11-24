@@ -6,7 +6,7 @@
 /*   By: aboulest <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:22:37 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/14 16:42:39 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:43:50 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstnew(void	*content)
 	new_list = malloc (sizeof(t_list));
 	if (!new_list)
 		return (NULL);
-	new_list->content = (char *)content;
+	new_list->content = content;
 	new_list->next = NULL;
 	return (new_list);
 }

@@ -6,13 +6,11 @@
 /*   By: aboulest <aboulest@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:55:04 by aboulest          #+#    #+#             */
-/*   Updated: 2022/11/14 16:39:22 by aboulest         ###   ########.fr       */
+/*   Updated: 2022/11/18 12:15:47 by aboulest         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 static char	*ft_malloc_size(unsigned int start, size_t len, size_t strlen)
 {
